@@ -1,0 +1,24 @@
+				Views.project
+1.Created Project :
+	django-admin startproject viewsproject1
+2.Open the project :
+	cd viewsproject1
+3.Created the Application
+	python manage.py startapp myapp
+4.In settings.py 40th line
+	INSTALLED_APPS=[
+
+	'myapp',
+	]
+5.In views.py
+		from Django.http import HttpResponse
+		def home(request):
+			return HttpResponse("<h1>Home Page</h1>")
+6.In Urls.py
+		from myapp import views
+
+		urlpatterns=[
+			----
+		path('home/',views.home),
+		]
+
