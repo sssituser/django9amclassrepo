@@ -1,7 +1,49 @@
 {%extends 'myapp/base.html'%}
-
+{%load static%}
 {%block body_block%}
     <div class="container">
         <p class="h1 text-center text-primary">Home Page</p>
+        <div class="row">     
+            <div class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'images/img-1.jpg'%}" class="img-fluid" alt="">
+                    <div class="card-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, nostrum.
+                       <button class="btn btn-sm btn-outline-amber">Read More</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'images/img-4.jpg'%}" class="img-fluid" alt="">
+                    <div class="card-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, nostrum.
+                       <button class="btn btn-sm btn-outline-success">Read More</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'images/img-2.jpg'%}" class="img-fluid" alt="">
+                    <div class="card-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, nostrum.
+                       <button class="btn btn-sm btn-outline-primary">Read More</button>
+                    </div>
+                </div>
+            </div>
+             <div class="col-md-3">
+                <div class="card">
+                    <img src="{% static 'images/img-1.jpg'%}" class="img-fluid" alt="">
+                    <div class="card-body">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi, nostrum.
+                       <button class="btn btn-sm btn-outline-danger">Read More</button>
+                    </div>
+                </div>
+            </div>
+
+            
+
+
+        </div>
     </div>
 {%endblock%}

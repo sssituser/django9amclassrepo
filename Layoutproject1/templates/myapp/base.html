@@ -12,10 +12,10 @@
 </head>
 <body>
             <nav class="navbar navbar-expand-sm bg-primary">
-                <a href="/" class="navbar-brand">Home Page</a>
+                <a href="/" class="navbar-brand text-white">Home Page</a>
                 <ul class="nav">
                     <li class="nav-item">
-                        <a href="/regiter" class="nav-link text-white">Register</a>
+                        <a href="/register" class="nav-link text-white">Register</a>
                     </li>
                     <li class="nav-item">
                         <a href="/login" class="nav-link text-white">Login</a>
@@ -27,6 +27,9 @@
                         <a href="/contact" class="nav-link text-white">Contact</a>
                     </li>
                 </ul>
-            </nav>    
+            </nav> 
+            
+            {%block content_block%}
+            {%endblock%}
 </body>
 </html>

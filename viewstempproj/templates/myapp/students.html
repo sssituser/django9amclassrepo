@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Students</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
+<!-- MDBootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        {%if students%}
+           <table class="table table-bordered table-striped table-hover  text-center">
+                <thead>
+                    <tr class="bg-primary text-white">
+                        <th>Student Id</th>
+                        <th>Student Name</th>
+                        <th>Student Marks</th>
+                        <th>Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for stu in students%}
+                    <tr>
+                        <td>{{stu.stuid}}</td>
+                        <td>{{stu.stuname}}</td>
+                        <td>{{stu.stumarks}}</td>
+                        <td>
+                            <img src="{{stu.imgurl}}" height="100" width="200" class="img-fluid img-thumbnail" alt="">
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+           </table>
+        {%else%}
+            <p class="h1 text-danger text-center">Records not found</p>
+        {%endif%}
+    </div>
+</body>
+</html>
