@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Home Page</title>
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
+
+<!-- MDBootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+</head>
+<body>
+    <div class="container ">
+        {%if EmpList%}
+            <table class="table table-bordered table-hover table-striped text-center">
+                <thead class="bg-primary text-white">
+                    <tr>
+                        <th>Employee Id</th>
+                        <th>Employee Name</th>
+                        <th>Employee Salary</th>
+                        <th>Employee Image</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {%for emp in EmpList%}
+                    <tr>
+                        <td>{{emp.EmpId}}</td>
+                        <td>{{emp.EmpName}}</td>
+                        <td>{{emp.EmpSal}}</td>
+                        <td>
+                            <img src="{{emp.EmpImg}}" height="200" width="180" class="img-fluid" alt="">
+                        </td>
+                    </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        {%else%}
+
+        {%endif%}
+    </div>
+</body>
+</html>

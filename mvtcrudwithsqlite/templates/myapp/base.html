@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+   <!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+<!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
+
+<!-- MDBootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm  bg-secondary">
+        <a href="/" class="navbar-brand text-white">Home</a>
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="/register" class="navbar-brand text-white">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/edit" class="navbar-brand text-white">Edit</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/find" class="navbar-brand text-white">Find</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/employees" class="navbar-brand text-white">Employees</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {%block body_block%}
+    {%endblock%}
+</body>
+</html>
