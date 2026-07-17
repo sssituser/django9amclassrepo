@@ -1,19 +1,21 @@
 {%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
 {%block body_block%}
-
-<div class="container">
-    <p class="h1 text-center text-success">Register Page</p>
     <form action="" method="POST">
         {%csrf_token%}
-       <div class="container">
-        <div class="row d-flex justify-content-center">
+       <div class="container mt-5">
+         <div class="row d-flex justify-content-center">
             <div class="col-md-5">
                 <div class="card">
                     <div class="card-header bg-secondary text-white text-center">
                             <p class="h3">Create Employee</p>
                     </div>
                     <div class="card-body">
-                         {{Form.as_p}}
+                        {{Form.EmpId|add_class:"form-control mt-2"|attr:"placeholder:Employee ID"}}
+
+                        {{Form.EmpName|add_class:"form-control mt-2"|attr:"placeholder:Employee Name"}}
+
+                        {{Form.EmpSal|add_class:"form-control mt-2"|attr:"placeholder:Employee Salary"}}             
                  <button class="btn btn-primary btn-sm">Register</button>
                     </div>
                 </div>
@@ -22,5 +24,5 @@
        </div>
     </form>
 </div>
-
 {%endblock%}
+       

@@ -22,7 +22,18 @@
                                     <td>{{emp.EmpId}}</td>
                                     <td>{{emp.EmpName}}</td>
                                     <td>{{emp.EmpSal}}</td>
-                                    <td>Find Edit Delete</td>
+                                    <td>
+                                    <a href="/find">
+                                        <i class="fa fa-eye fa-2x text-primary mr-2"></i>
+                                    </a>
+                                        
+                                     <a href="/edit">
+                                        <i class="fa fa-edit fa-2x text-success mr-2"></i>
+                                     </a>
+
+                                    <i class="fa fa-trash-alt fa-2x text-danger"></i>
+
+                                    </td>
                                 </tr>
                             {%endfor%}
                         </tbody>
