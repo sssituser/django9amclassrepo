@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from myapp.models import Student
 from myapp.forms import StudentForm
 
@@ -15,6 +15,12 @@ def register(request):
             sform.save(commit=True)
             return redirect('/')
     return render(request,'register.html',{"form":sform})
+def getstuent(request,id):
+    student = get_object_or_404(Student,id=id)
+    return render(request,'find.html',{"stu":student})
+
+
+
 
     
     

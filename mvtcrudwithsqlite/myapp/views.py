@@ -1,4 +1,4 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect,get_object_or_404
 from myapp.forms import EmployeeForm
 from myapp.models import Employee
 
@@ -16,8 +16,9 @@ def register(request):
     return render(request,'myapp/register.html',{'Form':EmpForm})
 
 
-def find(request):
-    return render(request,'myapp/find.html')
+def find(request,id):
+    employee = get_object_or_404 (Employee,EmpId=id)
+    return render(request,'myapp/find.html',{'emp':employee})
 
 
 def edit(request):
