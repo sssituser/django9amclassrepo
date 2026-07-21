@@ -19,10 +19,24 @@ def register(request):
 def find(request,id):
     employee = get_object_or_404 (Employee,EmpId=id)
     return render(request,'myapp/find.html',{'emp':employee})
+    
 
 
-def edit(request):
-    return render(request,'myapp/edit.html')
+def edit(request,id):
+    Emply = Employee.objects.get(pk=id)
+    EmplyForm = EmployeeForm(instance=Emply)
+    if request.method=='POST':
+        EmplyForm = EmployeeForm(request.POST,instance=Emply)
+        EmplyForm.save()
+        return redirect("/employees")
+    return render(request,'myapp/edit.html',{'Form':EmplyForm})
+
+def delemployee(request,id):
+    Emply = get_object_or_404(Employee,EmpId=id)
+    if request.method == 'POST':
+        Emply.delete()
+        return redirect('/employees')
+    return render(request,'myapp/delete.html')
 
 def getemployees(request):
     Employees = Employee.objects.all()

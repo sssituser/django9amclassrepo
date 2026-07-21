@@ -1,8 +1,6 @@
 {%extends 'myapp/base.html'%}
 {%block body_block%}
-
-
-   
+  
     <div class="container">
         <div class="row d-flex justify-content-center mt-5">
             <div class="col-md-10">
@@ -31,7 +29,11 @@
                                         <i class="fa fa-edit fa-2x text-success mr-2"></i>
                                      </a>
 
-                                    <i class="fa fa-trash-alt fa-2x text-danger"></i>
+                                      <a href="/del/{{emp.EmpId}}">
+                                        <i class="fa fa-trash-alt fa-2x text-danger mr-2"></i>
+                                     </a>
+
+                                    
 
                                     </td>
                                 </tr>
