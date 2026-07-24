@@ -1,0 +1,22 @@
+{%extends 'myapp/base.html'%}
+{%block content_block%}
+<div class="continer">
+    >
+    <div class="row d-flex justify-content-center">
+        <div class="col-md-5">
+            <div class="card bg-default">
+                <div class="card-header">
+                    <p class="h1 text-center text-danger">Do You Want Delete ?</p
+                </div>
+                <div class="card-body">
+                    <form action="" method="POST">
+                        {%csrf_token%}
+                        <button class="btn btn-sm btn-danger text-white">Yes</button>
+                        <a href="/products" class="btn btn-warning btn-sm">No</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}

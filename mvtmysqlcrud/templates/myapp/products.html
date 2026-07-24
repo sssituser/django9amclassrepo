@@ -1,0 +1,45 @@
+{%extends 'myapp/base.html'%}
+{%block content_block%}
+    <div class="container">
+            {%if prods %}
+                <div class="row">
+                        {%for prod in prods%}
+                         <div class="col-md-4 mt-2">
+                            <div class="card">
+                                <img src="{{prod.ProImg}}" class="img-fluid img-thumbnail" alt="">
+                                <div class="card-body">
+                                    <ul class="list-group">
+                                        <li class="list-group-item">
+                                            <p class="h3">Produt ID : {{prod.ProId}}</p>
+                                        </li>
+                                         <li class="list-group-item">
+                                            <p class="h3">Produt Name : {{prod.ProName}}</p>
+                                        </li>
+                                        <li class="list-group-item">
+                                            <p class="h3">Produt Price : {{prod.ProPrice}}</p>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="/" class="mr-5">Back</a>
+                                    <a href="/find/{{prod.id}}" class="ml-2">
+                                        <i class="fa fa-eye fa-2x text-success"></i>
+                                    </a>
+                                    <a href="/edit/{{prod.id}}" class="ml-3">
+                                        <i class="fa fa-edit fa-2x text-warning"></i>
+                                    </a>
+                                    <a href="/del/{{prod.id}}" class="ml-3">
+                                        <i class="fa fa-trash-alt fa-2x text-danger"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            </div>
+                        {%endfor%}
+                    
+                </div>
+            
+            {%else%}
+                <p class="h1 text-center text-danger">Products Not Found</p>
+            {%endif%}
+    </div>
+{%endblock%}

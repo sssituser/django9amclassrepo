@@ -1,0 +1,28 @@
+{%extends 'myapp/base.html'%}
+{%block content_block%}
+    <div class="container mt-5">
+       <div class="row">
+        <div class="col">
+            <div class="card mt-5">
+                <div class="card-header bg-primary text-white text-center">
+                    <p class="h1">Product Inforamttion</p>
+                </div>
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-md-4">
+                            <img src="{{prod.ProImg}}" class="img-fluid img-thumbnail rounded-circle" alt="">
+                        </div>
+                        <div class="col-md-6 justify-content-around mt-5">
+                            <p class="h2 mt-5">Procut Id : {{prod.ProId}}</p>
+                            <p class="h2 mt-5">Procut Name : {{prod.ProName}}</p>
+                            <p class="h2 mt-5">Procut Price : {{prod.ProPrice}}</p>
+                            <a href="/products" class="btn btn-sm btn-primary">back</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+       
+    </div>
+{%endblock%}
