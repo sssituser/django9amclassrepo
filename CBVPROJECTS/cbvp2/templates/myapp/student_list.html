@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>StudentsPage</title>
+       <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
+                <a href="/create" class="btn btn-outline-primary">Create</a>
+               {%if student_list%}
+                <table class="table table-bordered table-striped text-center mt-3">
+                    <thead >
+                        <tr >
+                            <th class="bg-primary text-white">Student Id</th>
+                            <th class="bg-primary text-white">Student Name</th>
+                            <th class="bg-primary text-white">Student Marks</th>
+                             <th class="bg-primary text-white">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {%for stu in student_list%}
+                            <tr>
+                                <td>{{stu.StudentId}}</td>
+                                <td>{{stu.StuddentName}}</td>
+                                <td>{{stu.StudentMarks}}</td>
+                                <td>
+                                    Edit
+                                    View
+                                    Delete
+                                </td>
+                            </tr>
+                        {%endfor%}
+                    </tbody>
+                </table>
+               {%else%}
+               <p class="h1 text-danger text-center">Records Not Found</p>
+               {%endif%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
