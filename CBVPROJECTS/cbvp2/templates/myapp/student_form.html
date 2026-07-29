@@ -19,7 +19,18 @@
                         <div class="card-body">
                             <form action="" method="POST">
                                 {%csrf_token%}
-                                {{form.as_p}}
+                               
+
+                                <label for="" class="form-label">Student ID</label>
+                                {% render_field   form.StudentId class="form-control mb-2" placeholder="Student Id" %}
+
+                                <label for="" class="form-label">Student Name</label>
+                                {% render_field form.StuddentName class="form-control mb-2" placeholder="Student Name" %}
+
+
+                                  <label for="" class="form-label">Student Marks</label>
+                                {% render_field form.StudentMarks class="form-control mb-2" placeholder="Student Marks" %}
+
                                 <button class="btn btn-primary btn-md">Create</button>
                                 <a href="/" class="btn btn-md btn-warning float-end">Back</a>
                         

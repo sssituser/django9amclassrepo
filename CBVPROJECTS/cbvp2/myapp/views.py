@@ -23,4 +23,4 @@ class StudentDetails(DetailView):
     
 class DeleteStudent(DeleteView):
     model = Student
-    success_url = reverse_lazy("Students")
+    success_url = reverse_lazy("students")

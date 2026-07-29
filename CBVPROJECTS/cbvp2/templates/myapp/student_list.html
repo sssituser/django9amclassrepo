@@ -5,7 +5,9 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <title>StudentsPage</title>
        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+    </head>
 <body>
     <div class="container mt-5">
         <div class="row d-flex justify-content-center">
@@ -28,9 +30,20 @@
                                 <td>{{stu.StuddentName}}</td>
                                 <td>{{stu.StudentMarks}}</td>
                                 <td>
-                                    Edit
-                                    View
-                                    Delete
+                                    <a href="/{{stu.StudentId}}" >
+                                         <i class="bi bi-binoculars-fill fs-4"></i>
+                                    </a>
+                                    
+                                    <a href="/edit/{{stu.StudentId}}/">
+
+                                        <i class="bi bi-pencil-square text-success fs-4 ms-3"></i>
+                                    </a>
+                                    <a href="/delete/{{stu.StudentId}}/">
+
+                                        <i class="bi bi-trash-fill text-danger fs-4 ms-3"></i>
+                                    </a>
+
+                                    
                                 </td>
                             </tr>
                         {%endfor%}
