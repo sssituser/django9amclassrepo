@@ -1,0 +1,41 @@
+{%extends 'myapp/base.html'%}
+{%block body_block%}
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 ">
+                <div class="card shadow-lg mt-5 justify-content-center">
+                    <div class="card-heder text-white bg-primary text-center">
+                        <p class="h1">Employee Informtaion</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p class="lead">Employee ID</p>
+                                 <p class="lead">Employee Name</p>
+                                 <p class="lead">Employee Salary</p>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="lead fw-bold">{{employee.EmployeeId}}</p>
+                                 <p class="lead fw-bold">{{employee.EmployeeName}}</p>
+                                 <p class="lead fw-bold">{{employee.EmployeeSalary}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <form action="">
+                            {%csrf_token%}
+                             </a>
+                                     <a href="/edit/{{employee.EmployeeId}}/" class="ms-3">
+                                        <i class="bi bi-pencil-square fs-4 text-warning"></i>
+                                    </a>
+                                    <a href="/delete/{{employee.EmployeeId}}/" class="ms-3">
+                                        <i class="bi bi-trash-fill fs-4 text-danger"></i>
+                                    </a>
+                                    <a href="/" class="btn btn-sm btn-warning mt-3 w-100">Back</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,36 @@
+{%extends 'myapp/base.html'%}
+{%block body_block%}
+    <div class="container mt-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 ">
+                <div class="card shadow-lg mt-5 justify-content-center">
+                    <div class="card-heder text-danger bg-primary text-center">
+                        <p class="h1">Do You Want To Deete Employee ?</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p class="lead">Employee ID</p>
+                                 <p class="lead">Employee Name</p>
+                                 <p class="lead">Employee Salary</p>
+                            </div>
+                            <div class="col-md-8">
+                                <p class="lead fw-bold">{{employee.EmployeeId}}</p>
+                                 <p class="lead fw-bold">{{employee.EmployeeName}}</p>
+                                 <p class="lead fw-bold">{{employee.EmployeeSalary}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <form action="" method="POST">
+                            {%csrf_token%}
+                             
+                            <button class="btn btn-danger btn-md w-100">Yes</button>         
+                            <a href="/" class="btn btn-sm btn-warning mt-3 w-100">No</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{%endblock%}

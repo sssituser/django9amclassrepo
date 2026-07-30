@@ -1,0 +1,30 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+<div class="container mt-5">
+    <div class="row d-flex justify-content-center">
+        <div class="col-sm-5">
+                <div class="card shadow-lg mt-5">
+                    <div class="card-header bg-primary text-white text-center">
+                        <p class="h2">Create Employee</p>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {%csrf_token%}
+                            <label for="" class="form-label">Employee ID</label>
+                            {% render_field form.EmployeeId class="form-control mb-3" %}
+
+                             <label for="" class="form-label">Employee Name</label>
+                            {% render_field form.EmployeeName class="form-control mb-3" %}
+
+                             <label for="" class="form-label">Employee Salary</label>
+                            {% render_field form.EmployeeSalary class="form-control mb-3" %}
+                            <button class="btn btn-md btn-success w-100">Save</button>
+                            <a href="/" class="btn btn-md btn-warning w-100 mt-2">Back</a>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
