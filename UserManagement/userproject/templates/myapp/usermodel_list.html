@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>UsersInfo</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1 style="text-align: center;">Users List Page</h1>
+   
+    <div class="container">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-10">
+                 <a href="create/">Create</a>
+                {%if usermodel_list%}
+                    <table class="table table-bordered table-striped table-hover text-center">
+                        <thead >
+                            <tr >
+                                <th class="bg-primary text-white">FirstName</th>
+                                <th class="bg-primary text-white">LastName</th>
+                                <th class="bg-primary text-white">UserName</th>
+                                <th class="bg-primary text-white">EmailId</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {%for user in usermodel_list%}
+                                <tr>
+                                    <td>{{user.first_name}}</td>
+                                    <td>{{user.last_name}}</td>
+                                    <td>{{user.username}}</td>
+                                    <td>{{user.email}}</td>
+                                </tr>
+                            {%endfor%}
+                        </tbody>
+                    </table>
+                {%else%}
+
+                {%endif%}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
