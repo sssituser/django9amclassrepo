@@ -1,0 +1,97 @@
+A User Management System in Django allows users to:
+
+Register (Sign Up)
+Login
+Logout
+View Profile
+Update Profile
+Change Password
+Reset Password
+Admin manages users
+
+UserManagement/
+│
+├── UserManagement/
+│   ├── settings.py
+│   ├── urls.py
+│
+├── accounts/
+│   ├── migrations/
+│   ├── templates/
+│   │   └── accounts/
+│   │       ├── register.html
+│   │       ├── login.html
+│   │       ├── profile.html
+│   │       └── home.html
+│   ├── forms.py
+│   ├── models.py
+│   ├── views.py
+│   ├── urls.py
+│
+└── manage.py
+
+INSTALLED_APPS = [
+    ...
+    'accounts',
+]
+
+TEMPLATES = [
+{
+'DIRS':[BASE_DIR/'templates'],
+}
+]
+
+LOGIN_REDIRECT_URL = 'profile'
+LOGOUT_REDIRECT_URL = 'login'
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib.auth.decorators import login_required
+from .forms import RegisterForm
+
+def home(request):
+    return render(request,'accounts/home.html')
+
+
+def register(request):
+
+    if request.method=="POST":
+        form=RegisterForm(request.POST)
+
+        if form.is_valid():
+            user=form.save()
+            login(request,user)
+            return redirect('profile')
+
+    else:
+        form=RegisterForm()
+
+    return render(request,'accounts/register.html',
+                  {'form':form})
+
+
+@login_required
+def profile(request):
+    return render(request,'accounts/profile.html')
+
+
+
+
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+
+class RegisterForm(UserCreationForm):
+
+    email = forms.EmailField()
+
+    class Meta:
+        model = User
+        fields = [
+            'username',
+            'email',
+            'password1',
+            'password2'
+        ]
+
+
