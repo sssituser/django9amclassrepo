@@ -6,5 +6,6 @@ urlpatterns=[
     path('python/',views.pythonexam),
     path('ui/',views.uiexam),
     path('register/',views.register),
-    path('accounts/',include('django.contrib.auth.urls')),
+    path ('logout/',views.logout_view),
+    path('accounts/',include('django.contrib.auth.urls'),name="login"),
 ]

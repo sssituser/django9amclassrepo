@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 
 # Create your views here.
 from django.contrib.auth.decorators import *
@@ -23,5 +23,12 @@ def register(request):
         form = SingUpForm(request.POST)
         user = form.save()
         user.set_password(user.password)
-        return HttpResponse('accounts/login')
+        user.save()
+        return redirect('login')
     return render(request,'myapp/register.html',{'form':form})
+
+from django.contrib.auth import logout
+
+def logout_view(request):
+    logout(request)
+    return render(request,'myapp/logout.html')

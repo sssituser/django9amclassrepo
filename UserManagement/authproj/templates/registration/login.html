@@ -1,4 +1,5 @@
 {%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
 {%block content_block%}
     <div class="container">
         <p class="h1 text-center text-primary">Login  Page</p>
@@ -9,22 +10,21 @@
                         <p class="h2">Login Here</p>
                     </div>
                     <div class="card-body">
-                       <form action="">
-                         <div class="mb-2">
+                      <form action="" method="POST">
+                        {%csrf_token%}
+                        <div class="mb-2">
                             <label for="" class="form-label">User Name</label>
-                            <input type="text" class="form-control" placeholder=" User Name ">
+                            {%render_field form.username class="form-control" placeholder="User Name"%}
                         </div>
                         <div class="mb-2">
                             <label for="" class="form-label">Password</label>
-                            <input type="password" class="form-control" placeholder="Password">
+                            {%render_field  form.password type="password" class="form-control" placeholder="Password"%}
                         </div>
-                        <div class="mb-2">
-                            <button class="btn  btn-success w-100">Login</button>
-
-                        </div>
-                            <label for="" class="form-label">Create Account ?</label>
-                            <a href="/register">Register here</a>
-                       </form>
+                        <button class="btn btn-md btn-danger w-100">Login</button>
+                        <label for="" class="form-label">
+                            Don't you have account ?    <a href="/register">Create</a>
+                        </label>
+                      </form>
                     </div>
                 </div>
             </div>
