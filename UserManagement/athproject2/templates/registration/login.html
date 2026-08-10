@@ -1,0 +1,38 @@
+{%extends 'myapp/base.html'%}
+{%load widget_tweaks%}
+{%block body_block%}
+    <div class="container mt-5">
+       <div class="row d-flex justify-content-center">
+        
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h1>Login Here</h1>
+                    </div>
+                    <div class="card-body">
+                        <form action="" method="POST">
+                            {%csrf_token%}
+                
+                          
+            
+                            <div class="mb-2">
+                                  <label for="" class="form-label">UserName</label>
+                                  {%render_field form.username class='form-control' placeholder='User Name' %}
+                            </div>
+                            <div class="mb-2">
+                                  <label for="" class="form-label">Password</label>
+                                  {%render_field form.password  type="password" class='form-control' placeholder='password'%}
+                            </div>
+                            <button class="btn btn-primary w-100">Login</button>
+                            
+                            <label for="" class="form-label">
+                                Don't You Have Account ? <a href="/create">Register</a>
+                            </label>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+       </div>
+    </div>
+{%endblock%}
