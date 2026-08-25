@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <title>Page Title</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<!-- Bootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.2/css/bootstrap.min.css">
+<!-- MDBootstrap 4 CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.20.0/css/mdb.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm bg-primary">
+        <a href="/" class="navbar-brand text-white">Home Page</a>
+        <div class="container">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a href="/register" class="text-white nav-link">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logn" class="text-white nav-link">Login</a>
+                </li>
+                <li>
+                    <a href="/about" class="text-white nav-link">About</a>
+                </li>
+                <li>
+                    <a href="/contact" class="text-white nav-link">Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    {%block body_block%}
+    {%endblock%}
+</body>
+</html>

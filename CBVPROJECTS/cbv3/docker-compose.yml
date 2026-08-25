@@ -1,0 +1,33 @@
+services:
+
+  web:
+    build: .
+    container_name: django_mvt
+    command: python manage.py runserver 0.0.0.0:9000
+    volumes:
+      - .:/app
+    ports:
+      - "9000:9000"
+    depends_on:
+      - db
+    environment:
+      - DB_NAME=cbv3db
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_HOST=db
+      - DB_PORT=3306
+
+  db:
+    image: mysql:8.4
+    container_name: mysql_db
+    restart: always
+    environment:
+      MYSQL_DATABASE: cbv3db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:

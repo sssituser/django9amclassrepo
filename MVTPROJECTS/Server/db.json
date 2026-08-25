@@ -1,0 +1,17 @@
+{
+  "employees": [
+    {
+      "eid": 111,
+      "ename": "kiran",
+      "esal": 50000,
+      "id": "to4cnW37800"
+    },
+    {
+      "eid": 112,
+      "ename": "Raj",
+      "esal": 60000,
+      "id": "iqKxTmKB1O0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
