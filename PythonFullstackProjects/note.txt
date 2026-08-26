@@ -1,0 +1,22 @@
+Navigation :
+
+Home Register About Contact
+        Find
+        Delete
+        Update
+Configure the Bootstrap and @fortawesome
+============================================
+In main.jsx we need import
+
+============================================================
+Clean the App.jsx
+Create the Components
+===========================================
+=============================================
+1.BrowserRouter => react-router-dom
+2.Routes
+3.Route
+4.Link
+=============================================================
+Configure the Naviation in App.jsx
+============================================================
