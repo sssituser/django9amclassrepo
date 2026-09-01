@@ -1,7 +1,9 @@
-import React,{useState,useEffect} from  'react'
+import React,{useEffect, useState} from "react";
 import axios from 'axios';
+import {Link} from 'react-router-dom'
 export default function Employees(){
-    let[employees,setEmployees]=useState([]) ;
+    let[employees,setEmployees]=useState([]);
+  
     function getEmployees(){
         axios.get("http://localhost:8000/employees/")
         .then((res)=>{
@@ -11,25 +13,76 @@ export default function Employees(){
             alert(error)
         })
     }
-    useEffect(()=>
-        {
-            getEmployees()
-        },[])
+
+    useEffect(()=>{
+        getEmployees()
+    },[]);
+
 
     return(
         <React.Fragment>
-            <p className="h1 text-center">Employees Information</p>
+            <p className="h1 text-center text-danger">Employee Information</p>
+           
             
-            <div className="row d-flex justify-content-center">
-                <div className="col-md-5">
-                {
-                    employees.length>0 ?
-                <p className="text-center text-danger">Emploees found</p>
-                :
-                <p className="lead text-center text-success">Employees not found</p>
-                }
+            
+            {
+                employees.length>0  ? 
+
+                <div className="container">
+                      <table className="table table-bordered table-hover table-striped text-center">
+                    <thead  className="bg-primary text-white ">
+                        <tr>
+                            <th>
+                                Employee ID
+                            </th>
+                            <th>
+                                Employee Name
+                            </th>
+                            <th>
+                                Employee Salary
+                            </th>
+                            <th>
+                                Actions
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            employees.map((emp)=>{
+                               return(
+                                <tr>
+                                    <td>{emp.EmployeeId}</td>
+                                    <td>{emp.EmployeeName}</td>
+                                    <td>{emp.EmployeeSalary}</td>
+                                    <td>
+                                        <Link to={`/find/${emp.EmployeeId}`} className="mr-3">
+                                            <i className="fa fa-eye fa-2x text-secondary"></i>
+                                        </Link>
+                                         <Link to={`/edit/${emp.EmployeeId}`} className="mr-3">
+                                            <i className="fa fa-2x fa-pen text-info"></i>
+                                        </Link>
+                                         <Link to={`/delete/${emp.EmployeeId}`} className="mr-3">
+                                            <i className="fa fa-2x fa-trash-alt text-danger"></i>
+                                        </Link>
+                                      
+                                    </td>
+                                </tr>
+                               )
+                            })
+                        }
+                    </tbody>
+
+                </table>
+              
                 </div>
-            </div>
+              
+
+
+                :
+                <p className="h1 text-danger text-center">Employee Not Found</p>
+            }
+
+
         </React.Fragment>
     )
 }
