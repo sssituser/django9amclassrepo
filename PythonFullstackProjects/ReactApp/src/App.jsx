@@ -6,6 +6,7 @@ import Register from "./components/Register";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Navbar from "./components/Navbar";
+import Employees from "./components/Employees";
 
 export default function App(){
   return(
@@ -16,7 +17,9 @@ export default function App(){
         <Route path="/"  element={<Home/>} />
         <Route path="/register"  element={<Register/>} />
         <Route path="/about"  element={<About/>} />
-         <Route path="/contact"  element={<Contact/>} />
+        <Route path="/contact"  element={<Contact/>} />
+        <Route path="/employees"  element={<Employees/>} />
+        
       </Routes>
       </BrowserRouter>
     </React.Fragment>
