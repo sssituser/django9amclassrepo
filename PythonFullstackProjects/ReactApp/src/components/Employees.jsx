@@ -20,11 +20,7 @@ export default function Employees(){
 
 
     return(
-        <React.Fragment>
-            <p className="h1 text-center text-danger">Employee Information</p>
-           
-            
-            
+        <React.Fragment>           
             {
                 employees.length>0  ? 
 
