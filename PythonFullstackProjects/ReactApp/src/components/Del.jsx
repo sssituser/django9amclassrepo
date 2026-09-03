@@ -3,7 +3,7 @@ import { useParams,useNavigate,Link } from "react-router-dom";
 import axios from 'axios'
 export default function Del(){
     const {id} = useParams()
-    
+    //uuuuuuu
     let navi = useNavigate()
     
     function dell(event){
