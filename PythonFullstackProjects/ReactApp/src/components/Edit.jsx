@@ -1,10 +1,10 @@
 import React, { useEffect, useState }  from "react";
 import axios from 'axios'
-import { Link,useNavigate, useParams } from "react-router-dom";
+import { Link,useNavigate ,useParams} from "react-router-dom";
 
 export default function Edit(){
-    let {id} = useParams()
     let navi = useNavigate()
+    let {id} = useParams()
     
     let[emp,setEmployee]=useState({
         "EmployeeId":"",
@@ -14,12 +14,8 @@ export default function Edit(){
   
     function getEmployeeById(){
         axios.get(`http://localhost:8000/employees/${id}/`)
-        .then((res)=>{
-            setEmployee(res.data)
-        })
-        .catch((error)=>{
-            alert(error)
-        })
+        .then((res)=>{setEmployee(res.data)})
+        .catch((err)=>{alert(err)})
     }
 
     function updateEmployee(event){
@@ -27,7 +23,7 @@ export default function Edit(){
         axios.put(`http://localhost:8000/employees/${id}/`,emp)
         .then(()=>
             {
-                alert("Record updated")
+                alert("Record Updated")
                 navi("/employees")
             })
         .catch((error)=>{alert(error)})
@@ -45,9 +41,7 @@ export default function Edit(){
         )
     }
 
-   useEffect(()=>{
-    getEmployeeById()
-   },[])
+   useEffect(()=>{getEmployeeById()},[])
    
 
     return(
@@ -59,8 +53,8 @@ export default function Edit(){
                    
                    <div className="col-md-5">
                      <div className="card">
-                        <div className="card-header text-center bg-dark text-white">
-                                <p className="h1">Edit Employee Here</p>
+                        <div className="card-header text-center bg-primary text-white">
+                                <p className="h1">Edit Here</p>
                         </div>
                         <div className="card-body">
                             <form action="" onSubmit={updateEmployee}>
@@ -77,7 +71,7 @@ export default function Edit(){
                                     <input type="number" name="EmployeeSalary" onChange={updateInput} value={emp.EmployeeSalary} max={'200000'} min='30000' className="form-control" placeholder="Employee Salary"/>
                                 </div>
                                
-                               <button className="btn btn-primary btn-md w-100">Update</button>
+                               <button className="btn btn-primary btn-md w-100">Create</button>
 
                                 <Link to='/employees' className="btn btn-success btn-md w-100">Employees</Link>
                                 
@@ -87,10 +81,6 @@ export default function Edit(){
                    </div>
                 </div>
             </div>
-
-
-
-
         </React.Fragment>
     )
 }
